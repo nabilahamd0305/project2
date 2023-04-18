@@ -21,8 +21,14 @@ def comp_str (input_list) :
                     print("number of vowels in string"+str(i+1)+  ":",len(result))
                     print("vowels in string" +str(i+1)+ ': '','.join(result))
                     print("\n")
-    else:
-        print("please select given options")
+            else:
+                for i in range(len(input_list)):
+                    result=[each for each in input_list[i].lower() if each not in vowels]
+                    print("no of consonants in string "+str(i+1)+':'','.join(result))
+                    print("consonants in string " +str(i+1)+':'','.join(result))
+                    print('\n')
+        else:
+           print("please select given options")
 
 
 user_input=int(input("enter the number of string to be compared"))
@@ -30,7 +36,7 @@ while user_input<2 or user_input>5 :
     if user_input<2:
         print("\n number of strings should be greater than or equal to 2\n")
     elif user_input >5:
-        print("\n number of strings should be less tha or equal to 5 \n")
+        print("\n number of strings should be less than or equal to 5 \n")
     opt = ["would you like to enter another value","exit"]
     print("please choose:")
     for idx, element in enumerate(opt):
